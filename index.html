@@ -22,12 +22,18 @@
             line-height: 1.6;
             color: #333;
             background: #f4f4f4;
+            font-weight: 600;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        p, li {
+            text-align: justify;
+            font-weight: 600;
         }
 
         /* Navigation */
@@ -50,9 +56,18 @@
 
         nav h1 {
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
+        nav h1 a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav h1 a:hover {
+            opacity: 0.8;
+        }
         nav ul {
             display: flex;
             list-style: none;
@@ -63,14 +78,13 @@
             color: #bbb;
             text-decoration: none;
             transition: all 0.3s;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         nav a:hover {
             color: white;
         }
 
-        /* Special styling for Projects link */
         nav a[href="#projects"] {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             -webkit-background-clip: text;
@@ -109,6 +123,7 @@
             font-size: 3.5rem;
             margin-bottom: 1rem;
             animation: fadeInUp 0.8s ease;
+            font-weight: 700;
         }
 
         #home .tagline {
@@ -116,6 +131,7 @@
             margin-bottom: 2rem;
             opacity: 0.95;
             animation: fadeInUp 1s ease;
+            font-weight: 700;
         }
 
         #home p {
@@ -124,6 +140,8 @@
             font-size: 1.15rem;
             line-height: 1.8;
             animation: fadeInUp 1.2s ease;
+            font-weight: 600;
+            text-align: center;
         }
 
         .btn {
@@ -133,7 +151,7 @@
             color: #667eea;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s;
             animation: fadeInUp 1.4s ease;
             font-size: 1.1rem;
@@ -171,6 +189,13 @@
             color: #2c3e50;
             position: relative;
             padding-bottom: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
         }
 
         h3:after {
@@ -185,8 +210,29 @@
             border-radius: 2px;
         }
 
+        h3 .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        h3.collapsed .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 5000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .collapsible-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+
         /* About Section */
-		.about-wrapper {
+        .about-wrapper {
             display: flex;
             align-items: center;
             gap: 3rem;
@@ -195,8 +241,8 @@
         }
 
         .about-photo {
-            width: 250px;
-            height: 250px;
+            width: 300px;
+            height: 300px;
             border-radius: 15px;
             object-fit: cover;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
@@ -207,11 +253,9 @@
             flex: 1;
         }
 
-        @media (max-width: 768px) {
-            .about-wrapper {
-                flex-direction: column;
-                text-align: center;
-            }
+        .about-content p {
+            font-weight: 600;
+            text-align: justify;
         }
 
         /* Experience Timeline */
@@ -247,11 +291,12 @@
             color: #2c3e50;
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .timeline-meta {
             color: #667eea;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 0.5rem;
             font-size: 1.05rem;
         }
@@ -260,6 +305,7 @@
             color: #7f8c8d;
             margin-bottom: 1rem;
             font-style: italic;
+            font-weight: 600;
         }
 
         .timeline-item ul {
@@ -270,6 +316,7 @@
         .timeline-item li {
             margin-bottom: 0.7rem;
             line-height: 1.7;
+            font-weight: 600;
         }
 
         /* Projects Section */
@@ -326,12 +373,14 @@
             color: #2c3e50;
             font-size: 1.5rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .project-card p {
             color: #555;
             line-height: 1.7;
             margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
         .project-tags {
@@ -347,7 +396,7 @@
             padding: 0.4rem 0.8rem;
             border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .project-links {
@@ -419,6 +468,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            font-weight: 700;
         }
 
         .skill-category h4 i {
@@ -433,6 +483,8 @@
             padding: 0.7rem 0;
             border-bottom: 1px solid #eee;
             font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
         }
 
         .skill-category li:last-child {
@@ -473,11 +525,12 @@
             color: #667eea;
             font-size: 1.4rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .education-card .degree {
             color: #2c3e50;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 0.8rem;
             font-size: 1.1rem;
         }
@@ -486,12 +539,16 @@
             color: #7f8c8d;
             margin-bottom: 0.5rem;
             line-height: 1.6;
+            font-weight: 600;
+            text-align: left;
         }
 
         .education-card .date {
             color: #95a5a6;
             font-size: 0.95rem;
             margin-top: 0.5rem;
+            font-weight: 600;
+            text-align: left;
         }
 
         .education-card .status {
@@ -502,7 +559,7 @@
             color: white;
             border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         /* Certifications */
@@ -543,25 +600,31 @@
             font-size: 1.3rem;
             margin-bottom: 0.8rem;
             padding-right: 3rem;
+            font-weight: 700;
         }
 
         .cert-card .issuer {
             color: #667eea;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 0.8rem;
             font-size: 1rem;
+            text-align: left;
         }
 
         .cert-card .date {
             color: #7f8c8d;
             margin-bottom: 0.5rem;
             font-size: 0.95rem;
+            font-weight: 600;
+            text-align: left;
         }
 
         .cert-card .credential {
             color: #95a5a6;
             font-size: 0.9rem;
             margin-top: 0.5rem;
+            font-weight: 600;
+            text-align: left;
         }
 
         /* Contact */
@@ -599,11 +662,15 @@
             color: #2c3e50;
             text-decoration: none;
             transition: color 0.3s;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .contact-item a:hover {
             color: #667eea;
+        }
+
+        .contact-item span {
+            font-weight: 600;
         }
 
         /* Footer */
@@ -616,6 +683,7 @@
 
         footer p {
             opacity: 0.8;
+            font-weight: 600;
         }
 
         /* Responsive Design */
@@ -679,6 +747,15 @@
             .timeline-item h4 {
                 font-size: 1.3rem;
             }
+
+            .about-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-content p {
+                text-align: justify;
+            }
         }
     </style>
 </head>
@@ -686,7 +763,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <h1><a href="#home" onclick="closeMenu()"></a>Hajer Benhamida</a></h1>
+            <h1><a href="#home">Hajer Benhamida</a></h1>
             <button class="mobile-menu-btn" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
@@ -707,21 +784,21 @@
     <section id="home">
         <div class="container">
             <h2>Hi, I'm Hajer Benhamida</h2>
-            <p class="tagline">Data Analyst | Business Consultant </p>
-            <p>Professional with 5+ years in Japan combining business consulting, web development, and data analytics expertise. Hold IT Bachelor's and Business Management Master's degrees, currently completing Master's in Data Science. Technical skills include Python, SQL, React.js, and machine learning. Experienced in analyzing complex business requirements, creating data-driven strategies, and delivering solutions for international clients.</p>
+            <p class="tagline">Data Analyst | Business Analyst | Data Science Master in progress...</p>
+            <p>Professional with a unique combination of business consulting and technical expertise. Hold an IT Bachelor's and a Business Management Master's, and currently completing a Master's in Data Science. Over 5 years of international consulting experience.</p>
             <a href="#contact" class="btn">Get In Touch</a>
         </div>
     </section>
 
     <!-- About Section -->
-	<section id="about">
+    <section id="about">
         <div class="container">
             <h3>About Me</h3>
             <div class="about-wrapper">
-                <!--<img src="images/profile.jpg" alt="Hajer Benhamida" class="about-photo">-->
+                <img src="hajer.jpg" alt="Hajer Benhamida" class="about-photo">
                 <div class="about-content">
-                    <!--<p>I'm a <span class="highlight">Business Consultant</span> and <span class="highlight">Web Developer</span> based in Tokyo, Japan, with a unique blend of technical expertise and business acumen. With an IT background, Business Management Master's degree, and currently pursuing a Master's in Data Science, I specialize in bridging the gap between technology and business strategy.</p>-->
-                    <p>I'm a multi-disciplinary professional based in Tokyo, Japan, with expertise in data analytics, business consulting, and software development. My educational foundation includes three degrees: Bachelor's in IT, Master's in Business Management, and Master's in Data Science (completing thesis).</p><p style="margin-top: 1.5rem;">I combine technical skills (Python, SQL, JavaScript, machine learning) with business acumen (SWOT analysis, strategic planning, market research) and hands-on development experience. This unique blend enables me to not only analyze data but also understand its business context and implement technical solutions effectively.</p>
+                    <p>I'm a multi-disciplinary professional based in Tokyo, combining business consulting experience with technical skills in software development and data science. I hold a Bachelor's in IT, a Master's in Business Management, and am currently completing a Master's in Data Science, focusing on analytics and machine learning.</p>
+                    <p style="margin-top: 1.5rem;">With over 5 years of experience analyzing market requirements, conducting feasibility studies, and developing data-driven strategies, I combine technical expertise (Python, SQL, JavaScript, Excel, machine learning) with business expertise (strategic planning, market research, SWOT analysis). This unique combination enables me to extract insights from data, understand their business impact, and deliver practical, implementable solutions.</p>
                 </div>
             </div>
         </div>
@@ -730,181 +807,237 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h3>Work Experience</h3>
-            <div class="timeline">
-                <!-- Business Consultant -->
-                <div class="timeline-item">
-                    <h4>Business Consultant</h4>
-                    <div class="timeline-meta">Harukaze Sogo • Apr 2020 - Present</div>
-                    <div class="timeline-location">Tokyo, Japan</div>
-                    <ul>
-                        <li>Advise international clients on business incorporation, conducting data-driven research and analysis of legal, financial, and operational requirements across multiple jurisdictions</li>
-                        <li>Collect, analyze, and synthesize regulatory data from various countries (UAE, Japan, Singapore) to evaluate feasibility and provide actionable market entry recommendations</li>
-                        <li>Analyze client financial capabilities, operational constraints, and strategic objectives to develop customized expansion solutions</li>
-                        <li>Create detailed business plans incorporating market analysis, competitive research, SWOT analysis, financial modeling, and risk assessment</li>
-                        <li>Develop strategic roadmaps with measurable milestones</li>
-                    </ul>
-                </div>
+            <h3 onclick="toggleSection('experience-content', this)">
+                Work Experience
+                <i class="fas fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div id="experience-content" class="collapsible-content">
+                <div class="timeline">
+                    <!-- Business Consultant -->
+                    <div class="timeline-item">
+                        <h4>Business Consultant</h4>
+                        <div class="timeline-meta">Harukaze Sogo • Apr 2020 - Present</div>
+                        <div class="timeline-location">Tokyo, Japan</div>
+                        <ul>
+                            <li>Advise international clients on business incorporation, conducting data-driven research and analysis of legal, financial, and operational requirements across multiple jurisdictions</li>
+                            <li>Collect, analyze, and synthesize regulatory data from various countries (UAE, Japan, Singapore) to evaluate feasibility and provide actionable market entry recommendations</li>
+                            <li>Analyze client financial capabilities, operational constraints, and strategic objectives to develop customized expansion solutions</li>
+                            <li>Create detailed business plans incorporating market analysis, competitive research, SWOT analysis, financial modeling, and risk assessment</li>
+                            <li>Develop strategic roadmaps with measurable milestones</li>
+                        </ul>
+                    </div>
 
-                <!-- Seller -->
-                <div class="timeline-item">
-                    <h4>Seller (Part-time)</h4>
-                    <div class="timeline-meta">Seisuke Knife Japan • Feb 2023 - Feb 2024</div>
-                    <div class="timeline-location">Tokyo, Japan</div>
-                    <ul>
-                        <li>Provided customer service by understanding customer needs and helping with product choices</li>
-                        <li>Managed stock, handled returns, and maintained organized product displays</li>
-                        <li>Gained strong product knowledge to offer helpful recommendations to customers</li>
-                    </ul>
-                </div>
+                    <!-- Seller -->
+                    <div class="timeline-item">
+                        <h4>Seller (Part-time)</h4>
+                        <div class="timeline-meta">Seisuke Knife Japan • Feb 2023 - Feb 2024</div>
+                        <div class="timeline-location">Tokyo, Japan</div>
+                        <ul>
+                            <li>Provided customer service by understanding customer needs and helping with product choices</li>
+                            <li>Managed stock, handled returns, and maintained organized product displays</li>
+                            <li>Gained strong product knowledge to offer helpful recommendations to customers</li>
+                        </ul>
+                    </div>
 
-                <!-- Agile Web Developer -->
-                <div class="timeline-item">
-                    <h4>Agile Web Developer</h4>
-                    <div class="timeline-meta">B'RAIN Tunisia (3'PRIME FRANCE Subsidiary) • Jan 2019 - Dec 2019</div>
-                    <div class="timeline-location">Tunisia</div>
-                    <ul>
-                        <li>Developed custom web applications using React.js, Node.js, and RESTful APIs in Agile/Scrum environment</li>
-                        <li>Collaborated with UI/UX designers and stakeholders to translate business requirements into technical solutions</li>
-                        <li>Created responsive, mobile-first applications with reusable components and maintained web services</li>
-                        <li>Implemented testing protocols and troubleshooting procedures to ensure code quality and performance</li>
-                        <li>Participated in sprint planning and daily standups, contributing to iterative development cycles</li>
-                    </ul>
-                </div>
+                    <!-- Agile Web Developer -->
+                    <div class="timeline-item">
+                        <h4>Agile Web Developer</h4>
+                        <div class="timeline-meta">B'RAIN Tunisia (3'PRIME FRANCE Subsidiary) • Jan 2019 - Dec 2019</div>
+                        <div class="timeline-location">Tunisia</div>
+                        <ul>
+                            <li>Developed custom web applications using React.js, Node.js, and RESTful APIs in Agile/Scrum environment</li>
+                            <li>Collaborated with UI/UX designers and stakeholders to translate business requirements into technical solutions</li>
+                            <li>Created responsive, mobile-first applications with reusable components and maintained web services</li>
+                            <li>Implemented testing protocols and troubleshooting procedures to ensure code quality and performance</li>
+                            <li>Participated in sprint planning and daily standups, contributing to iterative development cycles</li>
+                        </ul>
+                    </div>
 
-                <!-- Buyer -->
-                <div class="timeline-item">
-                    <h4>Buyer (Contract)</h4>
-                    <div class="timeline-meta">MEDDIS Group (Monoprix & Geant Hypermarkets) • Nov 2018 - Dec 2018</div>
-                    <div class="timeline-location">Tunisia</div>
-                    <ul>
-                        <li>Collected and analyzed sales data using Excel to forecast market trends and inform purchasing decisions</li>
-                        <li>Negotiated supplier agreements on pricing, quantities, and delivery schedules based on data analysis</li>
-                        <li>Managed inventory levels and collaborated with advertising department on promotional campaigns</li>
-                    </ul>
-                </div>
+                    <!-- Buyer -->
+                    <div class="timeline-item">
+                        <h4>Buyer (Contract)</h4>
+                        <div class="timeline-meta">MEDDIS Group (Monoprix & Geant Hypermarkets) • Nov 2018 - Dec 2018</div>
+                        <div class="timeline-location">Tunisia</div>
+                        <ul>
+                            <li>Collected and analyzed sales data using Excel to forecast market trends and inform purchasing decisions</li>
+                            <li>Negotiated supplier agreements on pricing, quantities, and delivery schedules based on data analysis</li>
+                            <li>Managed inventory levels and collaborated with advertising department on promotional campaigns</li>
+                        </ul>
+                    </div>
 
-                <!-- Web Developer -->
-                <div class="timeline-item">
-                    <h4>Web Developer (Part-time)</h4>
-                    <div class="timeline-meta">BEST BUREAU Agency • Aug 2016 - Oct 2018</div>
-                    <div class="timeline-location">Tunisia</div>
-                    <ul>
-                        <li>Assisted in project planning and execution throughout application development lifecycle</li>
-                        <li>Developed web applications using JavaScript and integrated databases and web services</li>
-                        <li>Collaborated with designers to ensure technical feasibility and alignment with visual design</li>
-                        <li>Contributed to front-end development using HTML/CSS best practices</li>
-                    </ul>
+                    <!-- Web Developer -->
+                    <div class="timeline-item">
+                        <h4>Web Developer (Part-time)</h4>
+                        <div class="timeline-meta">BEST BUREAU Agency • Aug 2016 - Oct 2018</div>
+                        <div class="timeline-location">Tunisia</div>
+                        <ul>
+                            <li>Assisted in project planning and execution throughout application development lifecycle</li>
+                            <li>Developed web applications using JavaScript and integrated databases and web services</li>
+                            <li>Collaborated with designers to ensure technical feasibility and alignment with visual design</li>
+                            <li>Contributed to front-end development using HTML/CSS best practices</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-   <!-- Projects Section -->
+
+    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h3>Projects</h3>
-			<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 1.5rem; font-size: 2rem; font-weight: 900; letter-spacing: 2px;">
-				🚧 UNDER CONSTRUCTION 🚧
-			</div>
+            <h3 onclick="toggleSection('projects-content', this)">
+                Projects
+                <i class="fas fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div id="projects-content" class="collapsible-content">
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-shopping-cart project-image-placeholder"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>E-Shop Sales Analysis</h4>
+                            <p>Comprehensive analysis of 400K+ online retail transactions using Python and SQL. Performed RFM customer segmentation, identified £1.2M at-risk revenue, and delivered strategic recommendations with 15-20% growth potential.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">SQL</span>
+                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">RFM Analysis</span>
+                                <span class="project-tag">Business Intelligence</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/hajerBENHAMIDA/Data-science-portfolio/tree/main/Online_Shop_Analysis" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                                <a href="https://github.com/hajerBENHAMIDA/Data-science-portfolio/blob/main/Online_Shop_Analysis/reports/Business_Analysis_rep.pdf" class="project-link secondary" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Business Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-shield-alt project-image-placeholder"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>Credit Card Fraud Detection</h4>
+                            <p>Machine learning classification model to identify fraudulent credit card transactions. Handled imbalanced dataset using resampling techniques and achieved high precision/recall metrics for fraud prevention.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Scikit-learn</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Classification</span>
+                                <span class="project-tag">Imbalanced Data</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/hajerBENHAMIDA/Data-science-portfolio/tree/main/fraudulent_credit_card_transactions" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-chart-bar project-image-placeholder"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4>Inventory Replenishment Dashboard</h4>
+                            <p>Interactive Power BI dashboard for inventory management optimization. Features demand forecasting, stock level monitoring, and automated replenishment recommendations to minimize costs and prevent stockouts.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">Data Visualization</span>
+                                <span class="project-tag">Forecasting</span>
+                                <span class="project-tag">Inventory Management</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/hajerBENHAMIDA/Data-science-portfolio/tree/main/Replenishment_Inventory_dashboard" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h3>Skills & Expertise</h3>
-            <div class="skills-grid">
-                <!-- Data Analysis -->
-                <div class="skill-category">
-                    <h4><i class="fas fa-chart-line"></i> Data Analysis</h4>
-                    <ul>
-                        <li>Python (pandas, NumPy, matplotlib, seaborn)</li>
-                        <li>Machine Learning (scikit-learn, XGBoost)</li>
-                        <li>SQL & Database Management</li>
-                        <li>Statistical Analysis & Forecasting</li>
-                        <li>Microsoft Excel (Advanced)</li>
-                        <li>Jupyter Notebook</li>
-                    </ul>
-                </div>
+            <h3 onclick="toggleSection('skills-content', this)">
+                Skills & Expertise
+                <i class="fas fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div id="skills-content" class="collapsible-content">
+                <div class="skills-grid">
+                    <!-- Data Analysis -->
+                    <div class="skill-category">
+                        <h4><i class="fas fa-chart-line"></i> Data Analysis</h4>
+                        <ul>
+                            <li>Python (pandas, NumPy, matplotlib, seaborn)</li>
+                            <li>Machine Learning (scikit-learn, XGBoost)</li>
+                            <li>SQL & Database Management</li>
+                            <li>Statistical Analysis & Forecasting</li>
+                            <li>Microsoft Excel (Advanced)</li>
+                            <li>Jupyter Notebook</li>
+                        </ul>
+                    </div>
 
-                <!-- Development -->
-                <div class="skill-category">
-                    <h4><i class="fas fa-code"></i> Development</h4>
-                    <ul>
-                        <li>React.js & Node.js</li>
-                        <li>JavaScript, HTML, CSS</li>
-                        <li>RESTful APIs</li>
-                        <li>Git Version Control</li>
-                        <li>Linux/Windows OS</li>
-                        <li>UML & Design Patterns</li>
-                    </ul>
-                </div>
+                    <!-- Development -->
+                    <div class="skill-category">
+                        <h4><i class="fas fa-code"></i> Development</h4>
+                        <ul>
+                            <li>React.js & Node.js</li>
+                            <li>JavaScript, HTML, CSS</li>
+                            <li>RESTful APIs</li>
+                            <li>Git Version Control</li>
+                            <li>Linux/Windows OS</li>
+                            <li>UML & Design Patterns</li>
+                        </ul>
+                    </div>
 
-                <!-- Business & PM -->
-                <div class="skill-category">
-                    <h4><i class="fas fa-briefcase"></i> Business & PM</h4>
-                    <ul>
-                        <li>SWOT Analysis</li>
-                        <li>KPI Development</li>
-                        <li>Business Model Canvas</li>
-                        <li>Agile & Scrum (SMC Certified)</li>
-                        <li>Strategic Planning</li>
-                        <li>Feasibility Studies</li>
-                    </ul>
-                </div>
+                    <!-- Business & PM -->
+                    <div class="skill-category">
+                        <h4><i class="fas fa-briefcase"></i> Business & PM</h4>
+                        <ul>
+                            <li>SWOT Analysis</li>
+                            <li>KPI Development</li>
+                            <li>Business Model Canvas</li>
+                            <li>Agile & Scrum (SMC Certified)</li>
+                            <li>Strategic Planning</li>
+                            <li>Feasibility Studies</li>
+                        </ul>
+                    </div>
 
-                <!-- Languages -->
-                <div class="skill-category">
-                    <h4><i class="fas fa-language"></i> Languages</h4>
-                    <ul>
-                        <li>Arabic (Native)</li>
-                        <li>English (Business Fluent)</li>
-                        <li>French (Intermediate)</li>
-                        <li>Japanese (N4, studying for N3)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h3>Education</h3>
-            <div class="education-grid">
-                <!-- Data Science Master -->
-                <div class="education-card">
-                    <h4>Master of Science</h4>
-                    <div class="degree">Data Science</div>
-                    <div class="institution">International University of Applied Science, Germany (Online)</div>
-                    <div class="date">In Progress, Expected March 2026</div>
-                    <span class="status">Currently Completing Thesis</span>
-                </div>
-
-                <!-- Business Management -->
-                <div class="education-card">
-                    <h4>Master in Management</h4>
-                    <div class="degree">Business Management</div>
-                    <div class="institution">Business School of Tunis (ESC), Tunisia<br>Major: Entrepreneurship and Innovation</div>
-                    <div class="date">Sep 2016 - Jul 2018</div>
-                </div>
-
-                <!-- IT Bachelor -->
-                <div class="education-card">
-                    <h4>Bachelor's Degree</h4>
-                    <div class="degree">Information Technology</div>
-                    <div class="institution">Higher Institute of Technological Studies (ISETch), Tunisia<br>Major: Embedded Systems and Mobile Applications</div>
-                    <div class="date">Sep 2012 - Jun 2015</div>
+                    <!-- Languages -->
+                    <div class="skill-category">
+                        <h4><i class="fas fa-language"></i> Languages</h4>
+                        <ul>
+                            <li>Arabic (Native)</li>
+                            <li>English (Business Fluent)</li>
+                            <li>French (Intermediate)</li>
+                            <li>Japanese (N4, studying for N3)</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Certifications Section -->
     <section id="certifications">
         <div class="container">
-            <h3>Licenses & Certifications</h3>
-            <div class="certifications-grid">
+            <h3 onclick="toggleSection('certifications-content', this)">
+                Licenses & Certifications
+                <i class="fas fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div id="certifications-content" class="collapsible-content">
+                <div class="certifications-grid">
                 
                 <!-- Certification 1 -->
                 <div class="cert-card">
@@ -929,26 +1062,61 @@
                     <i class="fas fa-certificate cert-icon"></i>
                     <h4>Scrum Master Certified (SMC)</h4>
                     <div class="issuer">SCRUMstudy - Accreditation Body for Scrum and Agile</div>
-                    <div class="date">Issued Nov 2021 • Expired Nov 2024</div>
+                    <div class="date">Issued Nov 2021 </div>
                     <div class="credential">Credential ID: 862442</div>
                 </div>
 
             </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h3 onclick="toggleSection('education-content', this)">
+                Education
+                <i class="fas fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div id="education-content" class="collapsible-content">
+                <div class="education-grid">
+                    <!-- Data Science Master -->
+                    <div class="education-card">
+                        <h4>Master of Science</h4>
+                        <div class="degree">Data Science</div>
+                        <div class="institution">International University of Applied Science, Germany (Online)</div>
+                        <div class="date">In Progress, Expected March 2026</div>
+                        <span class="status">Currently Completing Thesis</span>
+                    </div>
+
+                    <!-- Business Management -->
+                    <div class="education-card">
+                        <h4>Master in Management</h4>
+                        <div class="degree">Business Management</div>
+                        <div class="institution">Business School of Tunis (ESC), Tunisia<br>Major: Entrepreneurship and Innovation</div>
+                        <div class="date">Sep 2016 - Jul 2018</div>
+                    </div>
+
+                    <!-- IT Bachelor -->
+                    <div class="education-card">
+                        <h4>Bachelor's Degree</h4>
+                        <div class="degree">Information Technology</div>
+                        <div class="institution">Higher Institute of Technological Studies (ISETch), Tunisia<br>Major: Embedded Systems and Mobile Applications</div>
+                        <div class="date">Sep 2012 - Jun 2015</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+
     <!-- Contact Section -->
-	<section id="contact">
+    <section id="contact">
         <div class="container">
             <h3>Get In Touch</h3>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <a href="mailto:benhamida.h@outlook.com">benhamida.h@outlook.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+818077411029">(+81) 80-7741-11029</a>
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-linkedin"></i>
@@ -987,12 +1155,18 @@
         document.addEventListener('click', function(event) {
             const nav = document.querySelector('nav');
             const menu = document.getElementById('nav-menu');
-            const btn = document.querySelector('.mobile-menu-btn');
             
             if (!nav.contains(event.target)) {
                 menu.classList.remove('active');
             }
         });
+
+        // Toggle collapsible sections
+        function toggleSection(contentId, headerElement) {
+            const content = document.getElementById(contentId);
+            content.classList.toggle('collapsed');
+            headerElement.classList.toggle('collapsed');
+        }
     </script>
 </body>
 </html>
